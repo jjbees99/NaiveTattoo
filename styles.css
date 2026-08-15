@@ -84,5 +84,20 @@
 /* Final phone-fit overrides */
 @media(max-width:900px){.home-page .hero{grid-template-columns:minmax(0,1fr);align-content:start;min-height:980px}.home-page .deck-area{justify-self:center;margin:8px auto 0}.site-header .brand{margin-left:0;flex:0 0 auto}.gallery-intro{max-width:100%;overflow:hidden}.gallery-intro>p:last-child{max-width:100%;overflow-wrap:anywhere}}
 @media(max-width:560px){.home-page .deck-area{width:78vw}.home-page .hero{padding-left:20px;padding-right:20px;min-height:920px}.site-header .brand{display:flex!important;position:absolute;right:14px;width:50px;height:50px;z-index:20}.site-header nav{position:absolute;left:50%;transform:translateX(-50%)}.site-header .brand img{display:block;width:50px;height:50px;opacity:1}.move-prompt{width:78px;height:78px;right:-2%;bottom:7%}.move-prompt b{font-size:14px}.gallery-intro h1{font-size:clamp(58px,19vw,76px)}.gallery-intro>p:last-child{font-size:20px;line-height:1.25;max-width:330px}}
+
+/* Desktop proportions matched to the intended compact 100%-zoom composition */
+@media(min-width:901px){
+  .site-header{height:88px;padding:13px 3vw}
+  .site-header .brand img{width:58px;height:58px}
+  .site-header nav{gap:34px}
+  .site-header nav a{font-size:11px;letter-spacing:.16em}
+  .site-header .header-book{padding:12px 16px;font-size:10px;letter-spacing:.11em}
+  .home-page .hero{min-height:100vh;padding:105px 4vw 50px;grid-template-columns:minmax(270px,.78fr) minmax(520px,1.25fr)}
+  .home-page .hero h1{font-size:clamp(68px,6vw,100px)}
+  .home-page .hero-intro{font-size:clamp(18px,1.45vw,22px);max-width:390px;margin:22px 0}
+  .home-page .deck-area{width:min(55vw,760px,calc(100vh - 125px));margin-right:0}
+  .home-page .move-prompt{width:112px;height:112px}
+  .home-page .move-prompt b{font-size:17px}
+}
 .home-artist{min-height:760px}.home-artist .message-button{border:0;font:inherit;cursor:pointer}
 .move-prompt b{max-width:88px;text-align:center;line-height:1.05}
