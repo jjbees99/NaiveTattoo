@@ -95,7 +95,7 @@
   .home-page .hero{min-height:100vh;padding:105px 4vw 50px;grid-template-columns:minmax(270px,.78fr) minmax(520px,1.25fr)}
   .home-page .hero h1{font-size:clamp(68px,6vw,100px)}
   .home-page .hero-intro{font-size:clamp(18px,1.45vw,22px);max-width:390px;margin:22px 0}
-  .home-page .deck-area{width:min(55vw,760px,calc(100vh - 125px));margin-right:0}
+  .home-page .deck-area{width:min(47vw,640px,calc(100vh - 155px));margin-right:2vw}
   .home-page .move-prompt{width:112px;height:112px}
   .home-page .move-prompt b{font-size:17px}
 }

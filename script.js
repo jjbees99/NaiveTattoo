@@ -9,8 +9,14 @@ const BASE_ARM_ANGLE = 136.4;
 let currentAngle = PARKED_ANGLE;
 let dragging = false;
 let playing = false;
+const PLAYBACK_KEY = 'naive-tattoo-playback';
 
 if (audio) audio.volume = 0.4;
+
+function savePlayback(active = playing && !audio?.paused) {
+  if (!audio) return;
+  sessionStorage.setItem(PLAYBACK_KEY, JSON.stringify({ active, time: audio.currentTime || 0 }));
+}
 
 function setArm(angle) {
   currentAngle = Math.max(PARKED_ANGLE, Math.min(PLAYING_ANGLE, angle));
@@ -32,7 +38,7 @@ async function playRecord() {
   deck.classList.add('playing');
   tonearm.setAttribute('aria-pressed', 'true');
   startStopButton?.setAttribute('aria-pressed', 'true');
-  try { await audio.play(); } catch (error) { console.warn('Audio could not start:', error); }
+  try { await audio.play(); savePlayback(true); } catch (error) { console.warn('Audio could not start:', error); }
 }
 
 function parkRecord() {
@@ -45,6 +51,7 @@ function parkRecord() {
   startStopButton?.setAttribute('aria-pressed', 'false');
   tonearm.style.removeProperty('transform');
   currentAngle = PARKED_ANGLE;
+  savePlayback(false);
 }
 
 if (tonearm) {
@@ -71,6 +78,25 @@ if (tonearm) {
   });
 }
 if (startStopButton) startStopButton.addEventListener('click', () => playing ? parkRecord() : playRecord());
+
+if (audio) {
+  let savedPlayback;
+  try { savedPlayback = JSON.parse(sessionStorage.getItem(PLAYBACK_KEY) || 'null'); } catch { savedPlayback = null; }
+  if (savedPlayback?.active) {
+    audio.currentTime = Number(savedPlayback.time) || 0;
+    if (deck && tonearm) {
+      playing = true;
+      deck.classList.add('playing');
+      tonearm.setAttribute('aria-pressed', 'true');
+      startStopButton?.setAttribute('aria-pressed', 'true');
+    }
+    const resumeAudio = () => audio.play().then(() => savePlayback(true)).catch(() => {});
+    resumeAudio();
+    document.addEventListener('pointerdown', resumeAudio, { once: true });
+  }
+  audio.addEventListener('timeupdate', () => { if (!audio.paused) savePlayback(true); });
+  window.addEventListener('pagehide', () => savePlayback(!audio.paused));
+}
 
 const observer = new IntersectionObserver(entries => entries.forEach(entry => {
   if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
