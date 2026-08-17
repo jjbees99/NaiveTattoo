@@ -18,7 +18,7 @@
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="Naive Tattoo Dresden, home"><img src="Assets/Logo/Orange logo.png" alt="Naive Tattoo Dresden orange logo"></a>
     <nav aria-label="Main navigation"><a href="index.html" aria-current="page">Home</a><a href="gallery.html">Gallery</a></nav>
-    <button class="header-book appointment-open" type="button">Appointment <span>&nearr;</span></button>
+    <button class="header-book appointment-open" type="button">Bookings <span>&nearr;</span></button>
   </header>
   <main>
     <section class="hero" id="top">
@@ -27,17 +27,9 @@
         <h1>Traditional tattoos,<br><em>by hand.</em></h1>
         <p class="hero-intro">Japanese traditional tebori and American traditional tattooing by Felipe El Bari.</p>
       </div>
-      <div class="deck-area">
-        <div class="deck" id="deck" aria-label="Interactive record player">
-          <img class="player" src="Assets/Vinyl player/player.png?v=221256" alt="Wooden record player">
-          <div class="vinyl-wrap"><img class="vinyl" src="Assets/Vinyl player/vinyl.png" alt="Naive Tattoo vinyl record"></div>
-          <button class="tonearm" id="tonearm" type="button" aria-label="Hold and drag the tonearm onto or off the record" aria-pressed="false"><img src="Assets/Vinyl player/stick.png" alt=""></button>
-          <button class="start-stop-hit" id="startStopButton" type="button" aria-label="Start or stop the record" aria-pressed="false"></button>
-        </div>
-        <div class="move-prompt" aria-hidden="true"><span><b>Move the needle</b></span></div>
+      <div class="hero-art" aria-hidden="true">
+        <img class="hero-logo" src="Assets/Logo/Orange logo.png" alt="">
       </div>
-      <p class="side-note">Tebori & American Traditional<br>Booking & available designs</p>
-      <span class="scroll-note">Drag the needle to play <span>&nearr;</span></span>
     </section>
     <section class="marquee" aria-label="Tattoo styles">
       <div class="marquee-track">
@@ -69,7 +61,6 @@
     </section>
   </main>
   <footer><span>Naive Tattoo Dresden</span><span>@naivetattoodresden</span><span>Dresden, Germany</span></footer>
-  <audio id="recordAudio" preload="metadata" loop src="Assets/Music/Rock Wit U (Yoruba Soul Mix - Dub).mp3"></audio>
   <dialog class="appointment-modal" id="appointmentModal">
     <button class="modal-close" type="button" aria-label="Close appointment details">&times;</button>
     <p class="eyebrow orange">Naive Tattoo Dresden</p><h2>Book a tattoo.</h2>

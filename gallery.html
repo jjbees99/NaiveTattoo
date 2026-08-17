@@ -16,13 +16,29 @@
   <header class="site-header gallery-header">
     <a class="brand" href="index.html" aria-label="Naive Tattoo Dresden, home"><img src="Assets/Logo/Orange logo.png" alt="Naive Tattoo Dresden orange logo"></a>
     <nav aria-label="Main navigation"><a href="index.html">Home</a><a href="gallery.html" aria-current="page">Gallery</a></nav>
-    <button class="header-book appointment-open" type="button">Appointment <span>&nearr;</span></button>
+    <button class="header-book appointment-open" type="button">Bookings <span>&nearr;</span></button>
   </header>
   <main>
     <section class="gallery-intro">
       <p class="eyebrow orange">Selected work &middot; Dresden</p>
       <h1>Made to live<br><em>on skin.</em></h1>
       <p>Japanese tebori, American traditional, custom and flash by Felipe El Bari.</p>
+    </section>
+    <section class="gallery-player" aria-labelledby="gallery-player-title">
+      <div class="gallery-player-copy">
+        <p class="eyebrow orange">Sound on</p>
+        <h2 id="gallery-player-title">Move the<br><em>needle.</em></h2>
+        <p>Enjoy the music while you look through the gallery.</p>
+      </div>
+      <div class="deck-area">
+        <div class="deck" id="deck" aria-label="Interactive record player">
+          <img class="player" src="Assets/Vinyl player/player.png?v=221256" alt="Wooden record player">
+          <div class="vinyl-wrap"><img class="vinyl" src="Assets/Vinyl player/vinyl.png" alt="Naive Tattoo vinyl record"></div>
+          <button class="tonearm" id="tonearm" type="button" aria-label="Hold and drag the tonearm onto or off the record" aria-pressed="false"><img src="Assets/Vinyl player/stick.png" alt=""></button>
+          <button class="start-stop-hit" id="startStopButton" type="button" aria-label="Start or stop the record" aria-pressed="false"></button>
+        </div>
+        <div class="move-prompt" aria-hidden="true"><span><b>Move the needle</b></span></div>
+      </div>
     </section>
     <section class="work gallery-work" aria-label="Tattoo portfolio">
       <div class="gallery">
@@ -35,7 +51,7 @@
       </div>
     </section>
   </main>
-  <footer><span>Naive Tattoo Dresden</span><a href="index.html">Return to record player &larr;</a><span>Dresden, Germany</span></footer>
+  <footer><span>Naive Tattoo Dresden</span><a href="index.html">Return home &larr;</a><span>Dresden, Germany</span></footer>
   <audio id="recordAudio" preload="auto" loop src="Assets/Music/Rock Wit U (Yoruba Soul Mix - Dub).mp3"></audio>
   <dialog id="lightbox"><button class="lightbox-close" aria-label="Close image">&times;</button><img src="" alt=""></dialog>
   <dialog class="appointment-modal" id="appointmentModal">

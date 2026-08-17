@@ -101,3 +101,31 @@
 }
 .home-artist{min-height:760px}.home-artist .message-button{border:0;font:inherit;cursor:pointer}
 .move-prompt b{max-width:88px;text-align:center;line-height:1.05}
+
+/* Homepage art: large signature mark */
+.hero-art{position:relative;width:min(48vw,680px);aspect-ratio:1;justify-self:end;margin-right:1vw}
+.hero-art img{position:absolute;display:block;object-fit:contain;pointer-events:none}
+.hero-logo{inset:3% 3% 3% 3%;width:94%;height:94%;filter:drop-shadow(0 20px 55px rgba(255,113,53,.12))}
+
+/* The interactive player now introduces the gallery */
+.gallery-player{display:grid;grid-template-columns:minmax(250px,.58fr) minmax(500px,1.2fr);align-items:center;gap:5vw;padding:90px 5vw 115px;border-bottom:1px solid var(--line);background:radial-gradient(circle at 72% 50%,#2b1e17 0,transparent 42%)}
+.gallery-player-copy{position:relative;z-index:4}
+.gallery-player-copy h2{font-size:clamp(62px,7vw,105px)}
+.gallery-player-copy>p:last-child{max-width:370px;margin:28px 0 0;font-family:var(--serif);font-size:clamp(20px,2vw,27px);line-height:1.15}
+.gallery-player .deck-area{width:min(55vw,720px);margin:0;justify-self:end}
+.gallery-player .move-prompt{right:1%;bottom:5%}
+
+@media(max-width:900px){
+  .hero-art{width:min(78vw,620px);justify-self:center;margin:5px auto 0}
+  .gallery-player{grid-template-columns:1fr;padding:75px 22px 90px;gap:25px}
+  .gallery-player-copy>p:last-child{max-width:500px}
+  .gallery-player .deck-area{width:min(92vw,680px);justify-self:center;margin:0 auto}
+}
+
+@media(max-width:560px){
+  .hero-art{width:92vw;margin-top:20px}
+  .gallery-player{padding-top:62px}
+  .gallery-player-copy h2{font-size:58px}
+  .gallery-player .deck-area{width:92vw;margin-left:-2vw}
+  .gallery-player .move-prompt{left:44%;right:auto;bottom:4%}
+}
